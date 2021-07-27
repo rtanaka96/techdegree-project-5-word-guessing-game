@@ -81,6 +81,11 @@ qwerty.addEventListener('click', function (e) {
     //call checkletter function
     let attempt = checkLetter(e.target.textContent);
 
+    //don't count clicks outside of the keyboard box
+    if (e.target.classList == 'keyrow') {
+        return false;
+    } 
+
     //count misses
     if (attempt == null && missed < 5) {
         let tries = document.querySelector('#scoreboard ol').children;
