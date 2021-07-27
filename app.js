@@ -131,8 +131,8 @@ function restartGame() {
     //hide overlay again
     overlay.style.display = 'none';
 
-    //hide all shown letters
-    document.querySelectorAll('.show').forEach(e => e.remove());
+    //remove all letters & spaces
+    document.querySelector('#phrase ul').innerHTML = '';
 
     //get new phrase and add it to the display
     const phraseArray = getRandomPhraseAsArray(phrases);
